@@ -38,3 +38,24 @@ public:
             temp2=temp2->next;
         }
         return NULL;
+        //time complexity 0(n^2)
+        // ListNode* temp1=headA;
+        // ListNode* temp2;
+        //  ListNode* temp3=headB;
+        // while(temp1!=NULL)
+        // {
+        //     temp2=temp3;
+        //     while(temp2!=NULL)
+        //     {
+        //        if(temp1->next==temp2->next) 
+        //        {
+        //            return temp1->next;
+        //        }
+        //         temp2=temp2->next;
+        //     }
+        //     temp3=temp3->next;
+        //    temp1=temp1->next;
+        // }
+        // return NULL;
+    }
+};
