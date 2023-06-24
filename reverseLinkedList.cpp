@@ -26,7 +26,7 @@ public:
         
         return prev;
     }
-    // recursive way
+    // recursive way to reverse SLL
     ListNode* recur(ListNode* temp,ListNode* prev)
     {
         if(temp==NULL)

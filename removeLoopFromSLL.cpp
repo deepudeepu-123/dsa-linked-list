@@ -26,7 +26,8 @@ class Solution
                     slow=slow->next;
                     fast=fast->next;
                 }
-                Node* cur=slow;//where loop starts
+                //where loop starts ,iterate from node where loop start to node which point to that node
+                Node* cur=slow;
                 while(cur->next!=slow)
                 cur=cur->next;
                 cur->next=NULL;

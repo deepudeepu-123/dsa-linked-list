@@ -22,7 +22,7 @@ class Solution
        }
        if(ahead!=NULL)
        {
-         tail->next=rever(ahead,k)  ;
+         tail->next=rever(ahead,k);
        }
        return prev;
         
