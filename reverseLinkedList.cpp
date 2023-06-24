@@ -26,4 +26,13 @@ public:
         
         return prev;
     }
+    // recursive way
+    ListNode* recur(ListNode* temp,ListNode* prev)
+    {
+        if(temp==NULL)
+        return prev;
+        ListNode* temp1=temp->next;
+        temp->next=prev;
+        return recur(temp1,temp);
+    }
 };
