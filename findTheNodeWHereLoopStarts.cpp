@@ -1,7 +1,7 @@
 class Solution
 {
     public:
-     //Function to find first node if the linked list has a loop.
+     //Function to find first node if the linked list has a loop
     int findFirstNode(Node* head)
     {
         if(head==NULL||head->next==NULL)
