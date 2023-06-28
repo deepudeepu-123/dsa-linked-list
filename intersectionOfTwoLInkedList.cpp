@@ -1,5 +1,8 @@
 class Solution {
 public:
+//two linked list has same nodes after any node of both the linked list points to the same node
+//for example: first SLL:- 1->2->3->4->5->NULL; and second SLL:- 11->12->4->5->NULL;
+// return the address of the node 4;
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
       int size1=0,size2=0;
         ListNode* temp1=headA;

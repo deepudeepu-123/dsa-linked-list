@@ -8,6 +8,10 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+//Add two number represented by linked list 
+//for example: first linked list 1->2->3->4->NULL  second linked list 2->3->4->NULL
+//resultant linked list 1->4->6->8->NULLs
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -40,3 +44,97 @@ public:
         return dummy->next;
     }
 };
+
+    struct Node* addTwoLists(struct Node* first, struct Node* second)
+    {
+        // code here
+        if(first==NULL||second==NULL)
+        return NULL;
+        struct Node  *prev=NULL,*cur=first,*ahead;
+        //reverse the first linked list;
+        while(cur!=NULL)
+        {
+            ahead=cur->next;
+            cur->next=prev;
+            prev=cur;
+            cur=ahead;
+        }
+        //assign the previous pointer to the first pointer;
+        //it is the new head of the first linked list;
+        first=prev;
+        
+        prev=NULL;
+        cur=second;
+        
+        //reverse the second linked list;
+        while(cur!=NULL)
+        {
+            ahead=cur->next;
+            cur->next=prev;
+            prev=cur;
+            cur=ahead;
+        }
+        //assign the previous pointer to the second pointer;
+        //it is the new head of the second linked list;
+        second=prev;
+        
+        int carry=0;
+        int sum;
+        //creating the linked list for the answer;
+        struct Node  *head=NULL,*tail=NULL;
+         
+        while(first!=NULL||second!=NULL)
+        {
+            sum=carry;
+            if(first!=NULL)
+            {
+              sum+=first->data;  
+              first=first->next;
+            }
+            if(second!=NULL)
+            {
+             sum+=second->data;
+             second=second->next;
+            }
+            
+            carry=sum/10;
+            sum=sum%10;
+            
+             struct Node* node=new Node(sum);
+             if(head==NULL)
+             {
+                 head=tail=node;
+             }
+             else
+             {
+                tail->next=node;
+                tail=node;
+             }
+            
+        }
+        
+         if(carry == 1)
+         {
+           struct Node* node = new Node(1);
+           if(head== NULL)
+             {
+               head=tail=node;
+             }
+            else
+             {
+              tail->next = node;
+              tail = node;
+            }
+         } 
+        prev=NULL;
+        cur=head;
+        while(cur!=NULL)
+        {
+            ahead=cur->next;
+            cur->next=prev;
+            prev=cur;
+            cur=ahead;
+        }
+        return prev;
+        
+    }
